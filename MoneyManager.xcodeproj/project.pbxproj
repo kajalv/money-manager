@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E0BF36921F505E8F00B8BC56 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0BF36911F505E8F00B8BC56 /* main.cpp */; };
 		E0BF36931F505EBE00B8BC56 /* MoneyManager in CopyFiles */ = {isa = PBXBuildFile; fileRef = E0BF36871F505E4300B8BC56 /* MoneyManager */; };
+		E0BF36991F5094DB00B8BC56 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0BF36981F5094DB00B8BC56 /* main.cpp */; };
+		E0BF36A21F509DF900B8BC56 /* CommandParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0BF36A01F509DF900B8BC56 /* CommandParser.cpp */; };
+		E0BF36A61F50AB3A00B8BC56 /* StringUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0BF36A41F50AB3A00B8BC56 /* StringUtils.cpp */; };
+		E0BF36A91F50AD8300B8BC56 /* Executor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0BF36A71F50AD8300B8BC56 /* Executor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +29,14 @@
 
 /* Begin PBXFileReference section */
 		E0BF36871F505E4300B8BC56 /* MoneyManager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MoneyManager; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0BF36911F505E8F00B8BC56 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
+		E0BF36981F5094DB00B8BC56 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
+		E0BF36A01F509DF900B8BC56 /* CommandParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommandParser.cpp; path = src/CommandParser.cpp; sourceTree = "<group>"; };
+		E0BF36A11F509DF900B8BC56 /* CommandParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CommandParser.hpp; path = src/CommandParser.hpp; sourceTree = "<group>"; };
+		E0BF36A31F50AAEF00B8BC56 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = src/Constants/Constants.h; sourceTree = "<group>"; };
+		E0BF36A41F50AB3A00B8BC56 /* StringUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StringUtils.cpp; path = src/Utilities/StringUtils.cpp; sourceTree = "<group>"; };
+		E0BF36A51F50AB3A00B8BC56 /* StringUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = StringUtils.hpp; path = src/Utilities/StringUtils.hpp; sourceTree = "<group>"; };
+		E0BF36A71F50AD8300B8BC56 /* Executor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Executor.cpp; path = src/Executor.cpp; sourceTree = "<group>"; };
+		E0BF36A81F50AD8300B8BC56 /* Executor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Executor.hpp; path = src/Executor.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +53,14 @@
 		E0BF367E1F505E4300B8BC56 = {
 			isa = PBXGroup;
 			children = (
-				E0BF36911F505E8F00B8BC56 /* main.cpp */,
+				E0BF36A71F50AD8300B8BC56 /* Executor.cpp */,
+				E0BF36A81F50AD8300B8BC56 /* Executor.hpp */,
+				E0BF36A41F50AB3A00B8BC56 /* StringUtils.cpp */,
+				E0BF36A51F50AB3A00B8BC56 /* StringUtils.hpp */,
+				E0BF36A31F50AAEF00B8BC56 /* Constants.h */,
+				E0BF36A01F509DF900B8BC56 /* CommandParser.cpp */,
+				E0BF36A11F509DF900B8BC56 /* CommandParser.hpp */,
+				E0BF36981F5094DB00B8BC56 /* main.cpp */,
 				E0BF36881F505E4300B8BC56 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +130,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0BF36921F505E8F00B8BC56 /* main.cpp in Sources */,
+				E0BF36A91F50AD8300B8BC56 /* Executor.cpp in Sources */,
+				E0BF36A61F50AB3A00B8BC56 /* StringUtils.cpp in Sources */,
+				E0BF36991F5094DB00B8BC56 /* main.cpp in Sources */,
+				E0BF36A21F509DF900B8BC56 /* CommandParser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

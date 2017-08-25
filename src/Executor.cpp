@@ -17,7 +17,7 @@ bool executeCommand(const std::string &transaction, const std::string &type, Dat
     
     if (equals(transaction, "Bank"))
     {
-        if (!isBlank(dateStr) && !isBlank(type) && amount != 0)
+        if (!isBlank(date) && !isBlank(type) && amount != 0)
         {
             std::cout << "Saved bank " << type << " for Rs. " << std::setprecision(2) << std::fixed << amount << " on " << dateStr << ".\n";
             result = true;
@@ -25,7 +25,7 @@ bool executeCommand(const std::string &transaction, const std::string &type, Dat
     }
     else if (equals(transaction, "PayTM"))
     {
-        if (!isBlank(dateStr) && !isBlank(type) && amount != 0)
+        if (!isBlank(date) && !isBlank(type) && amount != 0)
         {
             std::cout << "Saved PayTM " << type << " for Rs. " << std::setprecision(2) << std::fixed << amount << " on " << dateStr << ".\n";
             result = true;
@@ -33,7 +33,7 @@ bool executeCommand(const std::string &transaction, const std::string &type, Dat
     }
     else if (equals(transaction, "Uber"))
     {
-        if (!isBlank(dateStr) && amount != 0)
+        if (!isBlank(date) && amount != 0)
         {
             if (!isBlank(type) && (equals(type, "Personal") || equals(type, "Business")))
             {

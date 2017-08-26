@@ -10,7 +10,7 @@
 
 void parseCommand(int numParams, const char * params[],
                   std::string &transaction, std::string &type, std::string &date,
-                  std::string &amount, std::string &category, std::string &comment,
+                  std::string &amount, std::string &category, std::string &comment, std::string &balance,
                   double &amountValue, DateStruct &dateValue)
 {
     std::string parsedParams[MAX_PARAMS];
@@ -25,8 +25,9 @@ void parseCommand(int numParams, const char * params[],
     amount = parsedParams[ParamIndex::Amount];
     category = parsedParams[ParamIndex::Category];
     comment = parsedParams[ParamIndex::Comment];
+    balance = parsedParams[ParamIndex::Balance];
     
-    pruneCommand(transaction, type, date, amount, category, comment, amountValue, dateValue);
+    pruneCommand(transaction, type, date, amount, category, comment, balance, amountValue, dateValue);
 }
 
 void extractCommandLineFlags(std::string parsedParams[], const char * params[], int numParams)
@@ -63,12 +64,16 @@ void extractCommandLineFlags(std::string parsedParams[], const char * params[], 
             {
                 parsedParams[ParamIndex::Comment] = params[i + 1];
             }
+            else if (equals(currentParam, OPT_PREFIX + OPT_BALANCE))
+            {
+                parsedParams[ParamIndex::Balance] = params[i + 1];
+            }
         }
     }
 }
 
 void pruneCommand(std::string &transaction, std::string &type, std::string &date,
-                  std::string &amount, std::string &category, std::string &comment,
+                  std::string &amount, std::string &category, std::string &comment, std::string &balance,
                   double &amountValue, DateStruct &dateValue)
 {
     // transaction
@@ -165,6 +170,12 @@ void pruneCommand(std::string &transaction, std::string &type, std::string &date
     if (!getStringAsDouble(amount, amountValue))
     {
         amount = "";
+    }
+    
+    // balance
+    if (!equals(balance, "Bank") && !equals(balance, "PayTM"))
+    {
+        balance = "";
     }
     
     // category - no modifications

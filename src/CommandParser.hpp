@@ -23,12 +23,12 @@ typedef struct DateStruct DateStruct;
 void extractCommandLineFlags(std::string parsedParams[], const char * params[], int numParams);
 
 void pruneCommand(std::string &transaction, std::string &type, std::string &date,
-                  std::string &amount, std::string &category, std::string &comment,
+                  std::string &amount, std::string &category, std::string &comment, std::string &balance,
                   double &amountValue, DateStruct &dateValue);
 
 void parseCommand(int numParams, const char * params[],
                   std::string &transaction, std::string &type, std::string &date,
-                  std::string &amount, std::string &category, std::string &comment,
+                  std::string &amount, std::string &category, std::string &comment, std::string &balance,
                   double &amountValue, DateStruct &dateValue);
 
 bool isBlank(DateStruct date);

@@ -11,6 +11,7 @@
 
 #include "CommandParser.hpp"
 
+bool balanceQuery(const std::string &balance);
 bool executeCommand(const std::string &transaction, const std::string &type, DateStruct &date,
                     double &amount, const std::string &category, const std::string &comment);
 

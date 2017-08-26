@@ -31,3 +31,7 @@ The options are:
 `--comment` : Additional comments
 
 Depending on the transaction, some options may not be required.
+
+## Modifications to project before use
+
+In Xcodec go to Product > Scheme > Edit Scheme > Run test > Options. Down under Options check `Use custom working directory` and set it to the directory containing the code. eg. `~/money-manager`. (The program will store data in the `data/` folder.)

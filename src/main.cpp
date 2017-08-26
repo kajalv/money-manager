@@ -27,13 +27,18 @@ int main(int argc, const char * argv[])
     std::string amount;
     std::string category;
     std::string comment;
+    std::string balance;
     
     double amountValue = 0.0;
     DateStruct dateValue;
     
-    parseCommand(argc, argv, transaction, type, date, amount, category, comment, amountValue, dateValue);
+    parseCommand(argc, argv, transaction, type, date, amount, category, comment, balance, amountValue, dateValue);
     
-    if (!executeCommand(transaction, type, dateValue, amountValue, category, comment))
+    if (balanceQuery(balance))
+    {
+        ;
+    }
+    else if (!executeCommand(transaction, type, dateValue, amountValue, category, comment))
     {
         std::cout << "Could not execute command.\n";
     }

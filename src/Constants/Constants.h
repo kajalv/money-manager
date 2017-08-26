@@ -19,8 +19,9 @@ const std::string OPT_DATE = "date";
 const std::string OPT_AMT = "amount";
 const std::string OPT_CATEGORY = "category";
 const std::string OPT_COMMENT = "comment";
+const std::string OPT_BALANCE = "balance";
 
-#define MAX_PARAMS 6
+#define MAX_PARAMS 7
 
 enum ParamIndex
 {
@@ -29,7 +30,17 @@ enum ParamIndex
     Date,
     Amount,
     Category,
-    Comment
+    Comment,
+    Balance
 };
+
+const std::string fileBank = "dataBank.csv";
+const std::string filePayTM = "dataPayTM.csv";
+const std::string fileUber = "dataUber.csv";
+
+const std::string folderPrefix = "data/";
+
+const std::string fileBalanceBank = "balanceBank.txt";
+const std::string fileBalancePayTM = "balancePayTM.txt";
 
 #endif /* Constants_h */

@@ -13,6 +13,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 #include "../Constants/Constants.h"
 
 bool isBlank(const std::string &arg);

@@ -19,10 +19,10 @@ int main(int argc, const char * argv[])
         std::cout << "Usage\nmoneymanager [--options]\n\n";
         std::cout << "--transaction, -tr \t\t Transaction type: Bank, PayTM, or Uber.\n";
         std::cout << "--type, -ty \t\t\t For bank and PayTM: Credit or Debit. For Uber: Personal or Business.\n";
-        std::cout << "--date, -d \t\t\t\t Date in format such as 15/6/2017 or 15 Jun.\n";
+        std::cout << "--date, -d \t\t\t Date in format such as 15/6/2017 or 15 Jun.\n";
         std::cout << "--amount, -a \t\t\t Cash value.\n";
-        std::cout << "--category, -a \t\t\t Any category you want to categorize the transaction as, such as Travel or Shopping.\n";
-        std::cout << "--comment, -a \t\t\t Additional comments.\n";
+        std::cout << "--category, -ca \t\t\t Any category you want to categorize the transaction as, such as Travel or Shopping.\n";
+        std::cout << "--comment, -co \t\t\t Additional comments.\n";
 
         std::cout << RULEDLINE;
         return 0;

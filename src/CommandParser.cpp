@@ -97,6 +97,9 @@ void pruneCommand(std::string &transaction, std::string &type, std::string &date
     
     // date
     std::string dateTokens[3];
+    replaceAll(date, "-", " ");
+    replaceAll(date, "/", " ");
+    replaceAll(date, "\\", " ");
     tokenize(date, dateTokens, 3);
     
     int val = 0;

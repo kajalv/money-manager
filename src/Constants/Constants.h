@@ -21,6 +21,16 @@ const std::string OPT_CATEGORY = "category";
 const std::string OPT_COMMENT = "comment";
 const std::string OPT_BALANCE = "balance";
 
+const std::string SHORT_PREFIX = "-";
+
+const std::string SHORT_TRANSACTION = "tr";
+const std::string SHORT_TYPE = "ty";
+const std::string SHORT_DATE = "d";
+const std::string SHORT_AMT = "a";
+const std::string SHORT_CATEGORY = "ca";
+const std::string SHORT_COMMENT = "co";
+const std::string SHORT_BALANCE = "b";
+
 #define MAX_PARAMS 7
 
 enum ParamIndex
@@ -32,6 +42,13 @@ enum ParamIndex
     Category,
     Comment,
     Balance
+};
+
+enum TransactionType
+{
+    Bank = 0,
+    PayTM,
+    Uber
 };
 
 const std::string fileBank = "dataBank.csv";

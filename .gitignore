@@ -1,4 +1,5 @@
 bin/*
 data/*
+build/*
 MoneyManager.xcodeproj/xcuserdata/*
 MoneyManager.xcodeproj/project.xcworkspace/*

@@ -40,31 +40,31 @@ void extractCommandLineFlags(std::string parsedParams[], const char * params[], 
         {
             currentParam = params[i];
             
-            if (equals(currentParam, OPT_PREFIX + OPT_TRANSACTION))
+            if (equals(currentParam, OPT_PREFIX + OPT_TRANSACTION) || equals(currentParam, SHORT_PREFIX + SHORT_TRANSACTION))
             {
                 parsedParams[ParamIndex::Transaction] = params[i + 1];
             }
-            else if (equals(currentParam, OPT_PREFIX + OPT_TYPE))
+            else if (equals(currentParam, OPT_PREFIX + OPT_TYPE) || equals(currentParam, SHORT_PREFIX + SHORT_TYPE))
             {
                 parsedParams[ParamIndex::Type] = params[i + 1];
             }
-            else if (equals(currentParam, OPT_PREFIX + OPT_DATE))
+            else if (equals(currentParam, OPT_PREFIX + OPT_DATE) || equals(currentParam, SHORT_PREFIX + SHORT_DATE))
             {
                 parsedParams[ParamIndex::Date] = params[i + 1];
             }
-            else if (equals(currentParam, OPT_PREFIX + OPT_AMT))
+            else if (equals(currentParam, OPT_PREFIX + OPT_AMT) || equals(currentParam, SHORT_PREFIX + SHORT_AMT))
             {
                 parsedParams[ParamIndex::Amount] = params[i + 1];
             }
-            else if (equals(currentParam, OPT_PREFIX + OPT_CATEGORY))
+            else if (equals(currentParam, OPT_PREFIX + OPT_CATEGORY) || equals(currentParam, SHORT_PREFIX + SHORT_CATEGORY))
             {
                 parsedParams[ParamIndex::Category] = params[i + 1];
             }
-            else if (equals(currentParam, OPT_PREFIX + OPT_COMMENT))
+            else if (equals(currentParam, OPT_PREFIX + OPT_COMMENT) || equals(currentParam, SHORT_PREFIX + SHORT_COMMENT))
             {
                 parsedParams[ParamIndex::Comment] = params[i + 1];
             }
-            else if (equals(currentParam, OPT_PREFIX + OPT_BALANCE))
+            else if (equals(currentParam, OPT_PREFIX + OPT_BALANCE) || equals(currentParam, SHORT_PREFIX + SHORT_BALANCE))
             {
                 parsedParams[ParamIndex::Balance] = params[i + 1];
             }

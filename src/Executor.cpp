@@ -10,6 +10,51 @@
 #include <unistd.h>
 #include <sstream>
 
+bool writeToFile(TransactionType transactionType, const std::string& commaSeparatedValueString)
+{
+    bool result = false;
+    
+    std::string filePath;
+    char cwd[1024];
+    if (getcwd(cwd, sizeof(cwd)) == NULL)
+    {
+        return result;
+    }
+    
+    std::ostringstream ss;
+    ss << cwd << "/" << folderPrefix;
+    filePath = ss.str();
+    
+    switch (transactionType)
+    {
+        case TransactionType::Bank:
+            filePath = filePath + fileBank;
+            break;
+            
+        case TransactionType::PayTM:
+            filePath = filePath + filePayTM;
+            break;
+            
+        case TransactionType::Uber:
+            filePath = filePath + fileUber;
+            break;
+            
+        default:
+            break;
+    }
+    
+    std::ofstream outfile(filePath, std::ios::app);
+    if (outfile)
+    {
+        outfile << commaSeparatedValueString << "\n";
+        outfile.close();
+        std::cout << "Saved.\n";
+        result = true;
+    }
+    
+    return result;
+}
+
 bool balanceQuery(const std::string &balance)
 {
     bool result = false;
@@ -76,16 +121,19 @@ bool executeCommand(const std::string &transaction, const std::string &type, Dat
     {
         if (!isBlank(date) && !isBlank(type) && amount != 0)
         {
-            std::cout << "Saved bank " << type << " for Rs. " << std::setprecision(2) << std::fixed << amount << " on " << dateStr << ".\n";
-            result = true;
-        }
+            std::stringstream sstream;
+            sstream << dateStr << "," << amount << "," << type << "," << category << "," << comment;
+            std::string csvString = sstream.str();
+            result = writeToFile(TransactionType::Bank, csvString);        }
     }
     else if (equals(transaction, "PayTM"))
     {
         if (!isBlank(date) && !isBlank(type) && amount != 0)
         {
-            std::cout << "Saved PayTM " << type << " for Rs. " << std::setprecision(2) << std::fixed << amount << " on " << dateStr << ".\n";
-            result = true;
+            std::stringstream sstream;
+            sstream << dateStr << "," << amount << "," << type << "," << category << "," << comment;
+            std::string csvString = sstream.str();
+            result = writeToFile(TransactionType::PayTM, csvString);
         }
     }
     else if (equals(transaction, "Uber"))
@@ -94,8 +142,10 @@ bool executeCommand(const std::string &transaction, const std::string &type, Dat
         {
             if (!isBlank(type) && (equals(type, "Personal") || equals(type, "Business")))
             {
-                std::cout << "Saved Uber " << type << " for Rs. " << std::setprecision(2) << std::fixed << amount << " on " << dateStr << ".\n";
-                result = true;
+                std::stringstream sstream;
+                sstream << dateStr << "," << amount << "," << type << "," << category << "," << comment;
+                std::string csvString = sstream.str();
+                result = writeToFile(TransactionType::Uber, csvString);
             }
         }
     }
